@@ -48,7 +48,9 @@ function updateBoard() {
     const tile = grid.children[i];
     tile.textContent = board[i] === 0 ? '' : board[i];
     tile.className = 'tile';
-    if (board[i] !== 0) tile.classList.add('tile-' + board[i]);
+    if (board[i] !== 0) {
+      tile.classList.add('tile-' + (board[i] <= 2048 ? board[i] : 'super'));
+    }
   }
 }
 
@@ -104,10 +106,10 @@ function isGameOver() {
 
 window.addEventListener('keydown', e => {
   if (gameOverEl.style.display === 'flex') return;
-  if (e.key === 'ArrowLeft') move('left');
-  else if (e.key === 'ArrowRight') move('right');
-  else if (e.key === 'ArrowUp') move('up');
-  else if (e.key === 'ArrowDown') move('down');
+  if (e.key === 'ArrowLeft' || e.key === 'a') move('left');
+  else if (e.key === 'ArrowRight' || e.key === 'd') move('right');
+  else if (e.key === 'ArrowUp' || e.key === 'w') move('up');
+  else if (e.key === 'ArrowDown' || e.key === 's') move('down');
 });
 
 createBoard();
