@@ -52,6 +52,7 @@ h1 {
 .tile-512 { background: #edc850; color: #f9f6f2; }
 .tile-1024 { background: #edc53f; color: #f9f6f2; }
 .tile-2048 { background: #edc22e; color: #f9f6f2; }
+.tile-super { background: #3c3a32; color: #f9f6f2; }
 
 #gameOver {
   display: none;
@@ -68,6 +69,17 @@ h1 {
   align-items: center;
   z-index: 999;
   flex-direction: column;
+}
+
+#gameOver button {
+  background-color: #f67c5f;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
 }
 
 #score {
